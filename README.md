@@ -1,4 +1,5 @@
 # Purlocation
+[![Build Status](https://travis-ci.org/scottopell/Purlocation.svg?branch=master)](https://travis-ci.org/scottopell/Purlocation)
 
 This gem will take a Purdue building abbreviation, such as "MTHW" and return a Location object with any and all available information. See usage below for a list of exactly what is available.
 
