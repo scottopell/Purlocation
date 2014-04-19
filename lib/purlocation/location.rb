@@ -16,19 +16,16 @@ class Location
     @markers_hash = parser.parse(xml_data)["markers"].first[1]
   end
 
-
   def initialize abbr
     @me = self.class.markers_hash.select do |marker|
       marker["@abbreviation"] == abbr
     end.first
-  end
 
-  #def method_missing( meth, *arg, &block )
-    # if the method name is a field on the hash, return that value
-  #  super
-  #end
-
-  def name
-    @me["@name"]
+    @me.keys.each do |k|
+      meth = k[1..-1]
+      self.class.send( :define_method, meth ) do
+        return @me["@#{meth}"]
+      end
+    end
   end
 end
