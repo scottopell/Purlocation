@@ -1,6 +1,6 @@
 # Purlocation
 
-TODO: Write a gem description
+This gem will take a Purdue building abbreviation, such as "MTHW" and return a Location object with any and all available information. See usage below for a list of exactly what is available.
 
 ## Installation
 
@@ -18,7 +18,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Include the gem, then get a location object by like so `location = Purlocation.get_location "BRNG"`
+Once you have the location object, you can call any of the following methods on it.
+EX: `puts "BRNG has a full name of #{location.name}"`
+
+```
+name
+abbreviation
+lat
+lng
+image
+streetaddress
+citystatezip
+phone
+virtualtour
+webpage
+category
+tourcategory
+icontype
+details
+```
+
+Its worth noting that the source of this information is used in an interactive map, hence the "virtualtour" and "icontype" fields.
+
 
 ## Contributing
 
